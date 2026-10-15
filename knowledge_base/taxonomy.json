@@ -1,0 +1,119 @@
+{
+  "jumping_jet": {
+    "english": "Jumping Jet",
+    "chinese": "跳泉",
+    "translation_status": "working alias",
+    "patterns": [
+      "jumping\\s*jet",
+      "jumpingjet",
+      "rainbow\\s+star",
+      "rainbow\\s+flash"
+    ],
+    "aliases": [
+      "跳泉",
+      "Jumping Jet",
+      "JumpingJet",
+      "Rainbow Star",
+      "Rainbow Flash"
+    ],
+    "distinction": "Defined laminar arc; segmented flow only when source evidence supports cutting."
+  },
+  "laminar_jet": {
+    "english": "Laminar Jet",
+    "chinese": "层流喷泉",
+    "translation_status": "working alias",
+    "patterns": [
+      "laminar\\s+jet",
+      "laminar\\s+water"
+    ],
+    "aliases": [
+      "层流喷泉",
+      "层流",
+      "Laminar Jet",
+      "laminar"
+    ],
+    "distinction": "Laminar flow does not by itself imply a cutting mechanism."
+  },
+  "cable_water_curtain": {
+    "english": "Cable Water Curtain / Mylar lace",
+    "chinese": "拉线水帘 / 线帘",
+    "translation_status": "working alias",
+    "patterns": [
+      "mylar[ -]?lace",
+      "lace\\s+nozzle",
+      "cable\\s+water\\s+curtain"
+    ],
+    "aliases": [
+      "拉线水帘",
+      "线帘",
+      "Cable Water Curtain",
+      "Mylar lace",
+      "lace nozzle"
+    ],
+    "distinction": "Independent strings or laces carrying water; not woven steel mesh."
+  },
+  "steel_mesh_water_curtain": {
+    "english": "Fine woven stainless-steel mesh water curtain",
+    "chinese": "钢网水幕",
+    "translation_status": "待确认 / descriptive label only",
+    "patterns": [
+      "steel\\s+mesh\\s+water\\s+curtain",
+      "woven\\s+(?:stainless[ -]?steel|steel)\\s+mesh"
+    ],
+    "aliases": [
+      "钢网水幕",
+      "Steel Mesh Water Curtain",
+      "stainless-steel mesh water curtain"
+    ],
+    "distinction": "Fine mesh plane carrying water; not sparse cables. No proprietary product is assumed."
+  },
+  "water_screen": {
+    "english": "Water Screen",
+    "chinese": "水幕 / 投影水幕",
+    "translation_status": "generic; construction 待确认",
+    "patterns": [
+      "water\\s+screen",
+      "projection\\s+screen"
+    ],
+    "aliases": [
+      "水幕",
+      "投影水幕",
+      "Water Screen",
+      "projection screen"
+    ],
+    "distinction": "Verify whether the source means a sheet, mist screen, or another construction."
+  },
+  "water_film": {
+    "english": "Water-Film Effects",
+    "chinese": "水膜瀑布",
+    "translation_status": "working alias",
+    "patterns": [
+      "water[ -]?film",
+      "water\\s+film\\s+effect"
+    ],
+    "aliases": [
+      "水膜",
+      "水膜瀑布",
+      "water film",
+      "Water-Film Effects"
+    ],
+    "distinction": "A water film is not automatically cable-supported, mesh-supported, or a free-falling screen."
+  },
+  "glass_mirror_waterfall": {
+    "english": "Glass/Mirror Waterfalls",
+    "chinese": "玻璃 / 镜面流水",
+    "translation_status": "working alias",
+    "patterns": [
+      "glass.?mirror\\s+waterfall",
+      "glass\\s+waterfall",
+      "mirror\\s+waterfall"
+    ],
+    "aliases": [
+      "玻璃流水",
+      "镜面流水",
+      "Glass Waterfall",
+      "Mirror Waterfall"
+    ],
+    "distinction": "Water moves across a supporting surface."
+  }
+}

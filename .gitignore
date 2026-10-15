@@ -1,0 +1,20 @@
+# Private manufacturer source material and generated visual extracts.
+source_catalogues/
+knowledge_base/page_images/
+knowledge_base/extracted_images/
+
+# Rebuildable local indexes.
+knowledge_base/pages.jsonl
+knowledge_base/entities.jsonl
+knowledge_base/search.sqlite3
+knowledge_base/manifest.json
+
+# Local project inputs, generated images, plans, and assessment reports.
+project_images/
+output/image_pipeline/
+output/visual_assessment/
+tmp/image_pipeline/
+
+__pycache__/
+*.pyc
+
