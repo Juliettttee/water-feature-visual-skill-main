@@ -1,5 +1,6 @@
 # Private manufacturer source material and generated visual extracts.
-source_catalogues/
+source_catalogues/*
+!source_catalogues/README.md
 knowledge_base/page_images/
 knowledge_base/extracted_images/
 
