@@ -89,6 +89,20 @@ Each result includes manufacturer, catalogue, exact PDF page, source excerpt, ma
 
 `钢网水幕` 与 `拉线水帘` 不能互相替代。如果目录没有支持某种构造，必须明确报告“无来源支持”，不能用外观相似的水效顶替。
 
+## Unified task router / 统一任务路由
+
+The same Skill now coordinates four modes: Reference Search, Reverse Image Search, Visual Generation, and Image Editing & QA. It does not create a separate search application. / 同一个 Skill 统一协调四种模式：参考图检索、以图搜图、视觉生成、图像修改与质检；不会另建独立搜索应用。
+
+```powershell
+python scripts/water_feature_workflow.py "帮我找一些商业广场的跳泉参考图。"
+python scripts/water_feature_workflow.py "Find interesting indoor water curtain projects."
+python scripts/water_feature_workflow.py "帮我找和这张图片类似的水景项目。" --image project_images/site.jpg
+```
+
+The planner selects the mode, retrieves local catalogue evidence, builds Chinese and English search queries, reports platform capabilities, and states whether true reverse-image search is available. It never browses, generates an image or sends a paid request by itself. / 规划器会选择任务模式、检索本地目录证据、生成中英文搜索词、报告平台能力，并说明是否真正支持反向搜图。它自身不会联网搜索、生成图片或发送付费请求。
+
+When intent is unclear, the Skill asks “What would you like to do? / 你这次想做什么？” When intent is clear, it proceeds directly. / 意图不清时，Skill 会询问“你这次想做什么？”；任务清楚时则直接执行，不重复提问。
+
 ## Using the skill in Codex / 在 Codex 中使用
 
 Example requests / 示例：
