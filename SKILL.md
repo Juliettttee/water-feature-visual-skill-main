@@ -41,6 +41,8 @@ EXPLAIN may accompany any mode: describe supported physical behaviour, nozzle, s
 ## Reference image search
 Search internally indexed pages and external sources as complementary pools. Local catalogues establish terminology and technical principles; they do not limit results to catalogue images or OASE products. By default include Chinese searches across 小红书, 微信公众号 indexed articles, 百度, Chinese fountain manufacturers and architecture/landscape platforms, plus relevant international manufacturer sites, publications, Google-indexed sources, Pinterest, Instagram and YouTube. Show provenance and confidence. Distinguish opened/inspected pages from indexed snippets and inaccessible platforms. Reject false matches rather than padding a requested result count.
 
+For external searching, read [references/priority-search-sources.md](references/priority-search-sources.md) and search its named companies early. Treat it as a preferred discovery set, not an exclusive whitelist or automatic proof of technical claims. Use the documented current canonical URL when a user-supplied legacy domain is unsafe or no longer belongs to the company.
+
 For an uploaded image, analyse water type, geometry, material, behaviour, spatial context and lighting without requiring the user to describe visible facts. Compare against the local catalogue image index. Use true external reverse-image search only when the host actually supports it; otherwise use bilingual visual descriptions and expanded keywords and explicitly label that fallback. Never bypass login, CAPTCHA or platform restrictions, and never store credentials, cookies or verification codes.
 
 ## Output

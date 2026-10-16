@@ -42,6 +42,19 @@ AMBIGUOUS_PROMPT = (
     "4. Edit an image or assess its quality / 修改图片或进行质量检查"
 )
 
+PRIORITY_EXTERNAL_SOURCES = [
+    {"company": "Water Studio", "url": "https://wstudio.com/", "focus": "architectural water features and built projects"},
+    {"company": "Moment Factory", "url": "https://momentfactory.com/", "focus": "immersive experiences, lighting and choreography"},
+    {"company": "WET", "url": "https://wetdesign.com/", "focus": "landmark water and performance projects"},
+    {"company": "OASE", "url": "https://www.oase.com/", "focus": "fountain products, systems and technical evidence"},
+    {"company": "Crystal Fountains", "url": "https://crystalfountains.com/", "focus": "commercial products, services and built projects"},
+    {"company": "JML Elements", "url": "https://www.jml-elements.com/", "focus": "water design, hydraulic engineering and public-space projects", "replaces_unsafe_legacy_url": "https://www.jmlwaterfeaturedesign.com/"},
+    {"company": "Fountain People", "url": "https://www.fountainpeople.com/", "focus": "architectural and interactive fountain equipment and case studies"},
+    {"company": "GHESA Water & Art", "url": "https://ghesawaterart.com/", "fallback_url": "https://www.ghesa.es/en/water-and-art/", "focus": "water-and-art projects and shows"},
+    {"company": "ECA2", "url": "https://www.eca2.com/", "focus": "spectacular experiences and multimedia water shows"},
+    {"company": "Aquatique Show", "url": "https://www.aquatic-show.com/en/", "focus": "water shows, special effects and fountain performances"},
+]
+
 
 def normalized(value: str) -> str:
     return re.sub(r"\s+", " ", value.casefold()).strip()
@@ -158,6 +171,7 @@ def platform_plan(queries: dict[str, list[str]]) -> list[dict[str, Any]]:
     en = queries["english"][:3]
     return [
         {"platform": "Local OASE/Fontana/Crystal index", "status": "operational_local", "queries": cn[:1] + en[:1]},
+        {"platform": "Priority water-feature companies", "status": "host_browser_required", "sources": PRIORITY_EXTERNAL_SOURCES, "queries": cn[:1] + en},
         {"platform": "小红书 / Xiaohongshu", "status": "interactive_login_may_be_required", "method": "authorised browser search; indexed-web fallback", "queries": cn},
         {"platform": "微信公众号 / WeChat Official Accounts", "status": "indexed_search_or_interactive_access", "method": "search-engine indexed articles; open and inspect when accessible", "queries": cn},
         {"platform": "百度 / Chinese web search", "status": "host_browser_required", "queries": cn},
@@ -183,6 +197,7 @@ def capability_report() -> dict[str, Any]:
         "true_external_reverse_image_search": "conditional_on_host_or_authorised_platform; not performed by this script",
         "bilingual_description_keyword_fallback": "operational",
         "external_web_search": "requires host browser/search integration",
+        "priority_company_source_registry": f"operational; {len(PRIORITY_EXTERNAL_SOURCES)} verified-or-curated entries",
         "xiaohongshu": "requires authorised browser access; login may be required",
         "wechat_official_accounts": "indexed search available where exposed; article access may require platform access",
         "paid_generation": "available only through existing adapters with explicit per-call approval",

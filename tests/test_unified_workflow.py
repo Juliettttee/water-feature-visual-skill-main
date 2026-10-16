@@ -27,6 +27,19 @@ class UnifiedWorkflowTests(unittest.TestCase):
         self.assertIn("小红书 / Xiaohongshu", platforms)
         self.assertIn("Manufacturer websites", platforms)
 
+    def test_priority_company_sources_are_in_search_plan(self):
+        plan = workflow.build_plan("Find commercial plaza fountain references.")
+        priority = next(item for item in plan["external_search_plan"] if item["platform"] == "Priority water-feature companies")
+        companies = {item["company"] for item in priority["sources"]}
+        self.assertEqual(len(priority["sources"]), 10)
+        self.assertEqual(
+            companies,
+            {"Water Studio", "Moment Factory", "WET", "OASE", "Crystal Fountains", "JML Elements", "Fountain People", "GHESA Water & Art", "ECA2", "Aquatique Show"},
+        )
+        jml = next(item for item in priority["sources"] if item["company"] == "JML Elements")
+        self.assertEqual(jml["url"], "https://www.jml-elements.com/")
+        self.assertIn("jmlwaterfeaturedesign.com", jml["replaces_unsafe_legacy_url"])
+
     def test_reverse_image_request_routes_without_generation(self):
         sample = ROOT / "knowledge_base" / "page_images" / "crystal_2015" / "page-100.jpg"
         plan = workflow.build_plan("帮我找和这张图片类似的水景项目。", image=str(sample), limit=3)

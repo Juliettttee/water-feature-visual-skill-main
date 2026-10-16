@@ -103,6 +103,12 @@ The planner selects the mode, retrieves local catalogue evidence, builds Chinese
 
 When intent is unclear, the Skill asks “What would you like to do? / 你这次想做什么？” When intent is clear, it proceeds directly. / 意图不清时，Skill 会询问“你这次想做什么？”；任务清楚时则直接执行，不重复提问。
 
+### Priority external sources / 重点外部来源
+
+External reference searches prioritise Water Studio, Moment Factory, WET, OASE, Crystal Fountains, JML Elements, Fountain People, GHESA Water & Art, ECA2 and Aquatique Show before expanding to broader web and social-platform searches. See [`references/priority-search-sources.md`](references/priority-search-sources.md) for canonical URLs, source roles and access warnings. / 外部参考图检索会优先搜索上述十家公司，再扩展到其他网站和社交平台；规范网址、证据用途和访问警告见该参考文件。
+
+The former `jmlwaterfeaturedesign.com` domain is disabled in this workflow because it currently redirects to unrelated content. Use `jml-elements.com`. / 原 `jmlwaterfeaturedesign.com` 当前跳转至无关内容，因此本工作流禁用该域名，改用 `jml-elements.com`。
+
 ## Using the skill in Codex / 在 Codex 中使用
 
 Example requests / 示例：
